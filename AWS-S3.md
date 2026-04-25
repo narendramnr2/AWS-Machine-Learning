@@ -213,7 +213,12 @@ https://awspolicygen.s3.amazonaws.com/policygen.html
 
 ## 📌 Definition
 
-It is a web-based tool provided by AWS that helps users generate correct **IAM, S3 bucket, SNS, SQS, and VPC endpoint policies** in JSON format.
+It is a web-based tool provided by AWS that helps users generate correct policies for:
+- IAM users/roles  
+- S3 buckets  
+- SNS, SQS, and other AWS services  
+
+All policies are generated in **JSON format automatically**.
 
 ---
 
@@ -223,10 +228,10 @@ Think of it like:
 👉 “Form-based policy builder”
 
 Instead of writing JSON manually, you:
-- Select service
-- Choose actions
-- Add resources
-- Click generate
+- Select service  
+- Choose actions  
+- Add resource (bucket/ARN)  
+- Generate policy  
 
 ---
 
@@ -240,7 +245,7 @@ Instead of writing JSON manually, you:
 
 ---
 
-## 🚀 How to use it (Steps)
+## 🚀 How to use it (Step-by-Step)
 
 ### 1. Open the tool
 👉 https://awspolicygen.s3.amazonaws.com/policygen.html
@@ -248,47 +253,51 @@ Instead of writing JSON manually, you:
 ---
 
 ### 2. Select Policy Type
-- IAM Policy OR
-- S3 Bucket Policy
+Choose:
+- IAM Policy OR  
+- S3 Bucket Policy  
 
 ---
 
-### 3. Fill Details
+### 3. Configure Policy Details
 
-You select:
+Fill the required fields:
 
-- **Effect** → Allow / Deny  
-- **AWS Service** → S3  
-- **Actions** → e.g. GetObject, PutObject  
+- **Effect** → `Allow` or `Deny`  
+- **AWS Service** → `S3`  
+- **Actions** → e.g.  
+  - `s3:GetObject` (read)  
+  - `s3:PutObject` (upload)  
 - **ARN / Resource** → bucket or object path  
 
 ---
 
 ### 4. Add Statement
 - Click **Add Statement**
-- You can add multiple rules
+- You can add multiple rules in one policy
 
 ---
 
 ### 5. Generate Policy
 - Click **Generate Policy**
-- It creates JSON output automatically
+- The tool creates JSON automatically
 
 ---
 
-### 6. Copy Policy
-- Copy JSON
-- Paste into AWS S3 bucket policy section
+### 6. Copy & Use Policy
+- Copy generated JSON  
+- Paste into S3 bucket → **Permissions → Bucket Policy**
 
 ---
 
-## 🧱 Example Output (S3 Public Read)
+## 🧱 Example Output (S3 Public Read Policy)
 
 ```json
 {
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "PublicReadAccess",
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
@@ -296,3 +305,7 @@ You select:
     }
   ]
 }
+## 🧾 Simple Summary
+
+AWS Policy Generator is a visual tool that helps generate correct AWS policies (especially S3 bucket policies) without manually writing JSON, making it easier and faster for developers.
+
