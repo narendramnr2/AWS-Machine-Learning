@@ -177,12 +177,13 @@ If versioning is enabled:
 
 ---
 
-## 🔄 Example Lifecycle Flow
+## 🔄 S3 Lifecycle Flow Example
+
+
 Day 0–30 → Standard Storage
 Day 31–90 → Standard-IA
 Day 90–180 → Glacier
 Day 365 → Deleted
-
 
 ## ⚠️ Important Notes
 
