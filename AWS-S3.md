@@ -200,3 +200,99 @@ S3 Lifecycle Rules automate:
 - Storage optimization
 - Cost reduction
 - Data cleanup
+# 🛠️ AWS S3 Policy Generator Tool
+
+## ☁️ What is this tool?
+
+The AWS Policy Generator is an online tool used to **create IAM policies and S3 bucket policies easily without manually writing JSON**.
+
+👉 Tool link:  
+https://awspolicygen.s3.amazonaws.com/policygen.html
+
+---
+
+## 📌 Definition
+
+It is a web-based tool provided by AWS that helps users generate correct **IAM, S3 bucket, SNS, SQS, and VPC endpoint policies** in JSON format.
+
+---
+
+## 🧠 Simple Meaning
+
+Think of it like:
+👉 “Form-based policy builder”
+
+Instead of writing JSON manually, you:
+- Select service
+- Choose actions
+- Add resources
+- Click generate
+
+---
+
+## ⚙️ What you can create using this tool?
+
+- IAM Policies  
+- S3 Bucket Policies  
+- SNS Topic Policies  
+- SQS Queue Policies  
+- VPC Endpoint Policies  
+
+---
+
+## 🚀 How to use it (Steps)
+
+### 1. Open the tool
+👉 https://awspolicygen.s3.amazonaws.com/policygen.html
+
+---
+
+### 2. Select Policy Type
+- IAM Policy OR
+- S3 Bucket Policy
+
+---
+
+### 3. Fill Details
+
+You select:
+
+- **Effect** → Allow / Deny  
+- **AWS Service** → S3  
+- **Actions** → e.g. GetObject, PutObject  
+- **ARN / Resource** → bucket or object path  
+
+---
+
+### 4. Add Statement
+- Click **Add Statement**
+- You can add multiple rules
+
+---
+
+### 5. Generate Policy
+- Click **Generate Policy**
+- It creates JSON output automatically
+
+---
+
+### 6. Copy Policy
+- Copy JSON
+- Paste into AWS S3 bucket policy section
+
+---
+
+## 🧱 Example Output (S3 Public Read)
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::my-bucket/*"
+    }
+  ]
+}
