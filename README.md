@@ -12,5 +12,8 @@ AWS Machine Learning certfication preparation
 ```
 # AWS S3
 
+<img width="1860" height="890" alt="image" src="https://github.com/user-attachments/assets/1e42a35b-d639-4c5c-a451-0935cd6b0f9c" />
+
+
 
 
