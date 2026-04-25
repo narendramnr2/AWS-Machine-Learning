@@ -73,6 +73,129 @@ AWS S3 is a cloud storage service used to store files safely, access them anytim
 
 <img width="1860" height="890" alt="image" src="https://github.com/user-attachments/assets/1e42a35b-d639-4c5c-a451-0935cd6b0f9c" />
 
+# 🔄 AWS S3 Lifecycle Rules – Step-by-Step Creation
+
+## ☁️ Service
+Amazon S3 (Simple Storage Service)
+
+---
+
+## 🎯 Objective
+Create a lifecycle rule to automatically:
+- Move files to cheaper storage
+- Delete old/unnecessary files
+
+---
+
+## 🛠️ Step 1: Login to AWS Console
+- Go to AWS Console
+- Search for **S3**
+- Open Amazon S3 dashboard
+
+---
+
+## 📦 Step 2: Create or Select Bucket
+
+### Option A: Create New Bucket
+1. Click **Create bucket**
+2. Enter bucket name (must be unique)
+3. Select region
+4. Keep default settings (or configure as needed)
+5. Click **Create bucket**
+
+### Option B: Use Existing Bucket
+- Click on an existing bucket name
+
+---
+
+## ⚙️ Step 3: Open Lifecycle Configuration
+
+1. Inside the bucket
+2. Go to **Management** tab
+3. Scroll to **Lifecycle rules**
+4. Click **Create lifecycle rule**
+
+---
+
+## 🏷️ Step 4: Enter Rule Name
+- Example:
+  - `log-cleanup-rule`
+  - `image-archive-rule`
+
+---
+
+## 🎯 Step 5: Choose Rule Scope
+
+Select one:
+- Apply to **entire bucket**
+- Apply to **specific prefix**
+  - Example: `logs/`, `images/`
+- Apply using **tags**
+
+---
+
+## 🔄 Step 6: Configure Transition Actions
+
+Enable "Transition current versions of objects"
+
+### Example:
+- After **30 days** → Move to **Standard-IA**
+- After **90 days** → Move to **Glacier**
+- After **180 days** → Move to **Deep Archive**
+
+---
+
+## 🗑️ Step 7: Configure Expiration Actions
+
+Enable "Expire current versions of objects"
+
+### Example:
+- Delete objects after **365 days**
+
+---
+
+## 🔁 Step 8: (Optional) Versioning Rules
+
+If versioning is enabled:
+- Expire previous versions
+- Delete delete markers
+
+---
+
+## 👀 Step 9: Review Rule
+
+- Check:
+  - Rule name
+  - Scope
+  - Transition settings
+  - Expiration settings
+
+---
+
+## ✅ Step 10: Create Rule
+- Click **Create rule**
+
+---
+
+## 🔄 Example Lifecycle Flow
+Day 0–30 → Standard Storage
+Day 31–90 → Standard-IA
+Day 90–180 → Glacier
+Day 365 → Deleted
 
 
+## ⚠️ Important Notes
 
+- Rules run automatically (once daily)
+- Changes are not immediate
+- Deleted data cannot be recovered (unless versioning is enabled)
+- Helps reduce storage cost
+
+---
+
+## 🧾 Summary
+
+S3 Lifecycle Rules automate:
+- Storage optimization
+- Cost reduction
+- Data cleanup
