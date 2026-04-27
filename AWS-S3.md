@@ -312,4 +312,5 @@ Fill the required fields:
 ## 🧾 Simple Summary
 
 AWS Policy Generator is a visual tool that helps generate correct AWS policies (especially S3 bucket policies) without manually writing JSON, making it easier and faster for developers.
-
+```
+<img width="1803" height="910" alt="image" src="https://github.com/user-attachments/assets/44263895-126c-4167-8c0b-cc62a9876098" />
