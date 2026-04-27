@@ -9,15 +9,6 @@ Amazon FSx is a **fully managed file storage service** in AWS that provides shar
 
 ---
 
-## 🧠 Simple Architecture Diagram
-┌─────────────┼─────────────┐
-│ │ │
-EC2 App 1 EC2 App 2 EC2 App 3
-│ │ │
-└────── Shared Read/Write Storage ──────┘
-
----
-
 ## ⚖️ FSx vs S3 vs EBS
 
 | Service | Type | Use Case |
